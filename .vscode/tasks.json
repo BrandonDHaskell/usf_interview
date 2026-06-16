@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["-S", ".", "-B", "build", "-G", "Ninja"],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "detail": "Configure the project with CMake and Ninja."
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build"],
+      "group": "build",
+      "dependsOn": "CMake: Configure",
+      "problemMatcher": ["$gcc"],
+      "detail": "Build the interview executable."
+    },
+    {
+      "label": "CMake: Run",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build", "--target", "run"],
+      "group": "test",
+      "dependsOn": "CMake: Build",
+      "problemMatcher": [],
+      "detail": "Run the compiled interview program."
+    }
+  ]
+}
