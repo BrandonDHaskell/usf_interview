@@ -11,6 +11,6 @@ add_executable(interview src/main.cpp)
 add_custom_target(run
     COMMAND interview
     DEPENDS interview
-    WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     COMMENT "Run interview executable"
 )
